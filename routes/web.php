@@ -17,9 +17,11 @@ $router->get('/', function () use ($router) {
 
 
 $router->group(['prefix' => 'v1'], function ($api) {
-   $api->get('hello', function() {
+    $api->get('hello', function() {
       return response()->json([
           'message' => 'This is a simple example of item returned by your APIs. Everyone can see it.'
       ]);
-  });
+    });
+
+    $api->get('posts', 'Controller@test');
 });
